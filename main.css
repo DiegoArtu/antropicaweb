@@ -1,0 +1,2681 @@
+:root{
+    /* fontsize */
+    --title: 59px;
+    --text: 36px;
+    /* color */
+    --titlecolor: rgb(234, 98, 14);
+    --textcolor: rgba(79, 70, 63, 1);
+}
+
+@font-face{
+    font-family: "candara";
+    src: url('./assets/Candara.ttf');
+}
+
+@font-face{
+    font-family: "candara bold";
+    src: url('./assets/candara-bold.ttf');
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    
+    margin: 0;
+    padding: 0;
+    font-family: 'candara';
+    background-color: var(--dark);
+    transition: all .8s ease;
+}
+
+body.dark{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    
+}
+
+/*BUTTON*/
+
+.btn-dl{
+    background-color: white;
+    box-shadow: 0 0 20px black;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.btn-dl .btnws{
+    padding: 6px;
+    cursor: pointer;
+    width: 50px;
+    height:50px;
+    position: fixed;
+    right: 14px;
+    bottom: 10px;
+}
+
+
+/*NAVBAR*/
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container .row .logo{
+    
+    
+    color: transparent;
+    
+}
+
+header{
+    font-family: 'candara';
+    background-color: transparent;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    padding: 0px 15px;
+    z-index: 10;
+    
+}
+
+header.fixed {
+    background-color: white;
+    position: fixed;
+    box-shadow:0 0 20px rgb(152, 218, 146);
+    animation: fixHeader .3s ease;
+    transition: all .8s ease;
+}
+
+header.fixed .brand-name a img{
+    width: 150px;
+}
+
+body.dark header.fixed {
+    background-color: white;
+}
+
+@keyframes fixHeader{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+header .row{
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .brand-name a img{
+    margin-top: 8px;
+    margin-left: 120px;
+    width: 160px;
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
+}
+
+header .navbar{
+
+    transition: all .5s ease;
+}
+
+header .navbar ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header .navbar ul li{
+    display: inline-block;
+    margin-left: 35px;
+}
+
+header .navbar ul li img{
+    opacity: 0;
+    display: block;
+    width: 30px;
+}
+
+header .navbar ul li:hover img{
+    opacity: 1;
+}
+
+header .navbar ul li a{
+    font-size: 24px;
+    text-decoration: none;
+    line-height: 35px;
+    color: black;
+    font-weight: 500;
+    position: relative;
+    transition: all .5s ease;
+}
+
+header .navbar ul li a::before{
+    content: '';
+    height: 3px;
+    background-color: orangered;
+    width: 0%;
+    position: absolute;
+    bottom: -1px;
+    transition: all .3s ease;
+}
+
+header .navbar ul li a:hover::before{
+    width: 100%;
+    left: 0;
+}
+
+header .navbar ul li a:hover{
+    color: orangered;
+}
+
+header .navbar ul li a.active::before{
+    width: 100%;
+    left: 0;
+}
+
+header .navbar ul li a.active{
+    color:orangered;
+}
+
+
+
+header.fixed {
+    background-color: white;
+    position: fixed;
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.3);
+    animation: fixHeader .3s ease;
+
+}
+
+/* HOME */
+
+.home{
+    min-height: 100vh;
+    background-image: url('./assets/img/f1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    color: white;
+    grid-template-columns: repeat(12,1fr);
+    animation: banner 31s infinite;
+
+}
+
+.home .hometitles{
+    opacity: 1;
+    margin-left: 60px;
+    margin-bottom: 50px;
+    align-self: end;
+
+    grid-column: 2/7;
+}
+
+.home .hometitles img{
+    width: 95%;
+}
+
+@keyframes banner{
+    16%{
+        background: url('./assets/img/f1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    32%{
+        background: url('./assets/img/f2.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    48%{
+        background: url('./assets/img/f3.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    64%{
+        background: url('./assets/img/f4.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    80%{
+        background: url('./assets/img/f.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    90%{
+        background: url('./assets/img/f6.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    100%{
+        background: url('./assets/img/f1.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+/* .home .hometitles h2{
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    font-size: 58px;
+    font-weight: 300;
+    
+}
+
+.home .hometitles h4{
+    
+    font-family: 'Lora', serif;
+    margin-top: 0px;
+    font-size: 26px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.home .hometitles .title{
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 3px;
+    font-weight: 500;
+    font-size: 65px;
+    color: orangered;
+    
+}
+
+.home .hometitles p{
+    padding-left: 10px;
+    width: 90%;
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 30px;
+    border-left: 8px solid orangered;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 50;
+}
+ */
+/* P&P */
+
+.pyp{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.pyptitles{
+    margin-top: 100px;
+    grid-column: 2/12;
+}
+
+.uptitles{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-column: 2/12;
+    margin-bottom: 50px;
+}
+
+.uptitles img{
+    grid-column: 2/3;
+    height: 170px;
+    align-self: center;
+    justify-self: center;
+}
+
+.uptitles a{
+    font-size: 44px;
+    
+}
+
+.uptitles p{
+    padding: 0;
+    padding-left: 5px;
+    grid-column: 3/12;
+    font-size: var(--text);
+    color: var(--textcolor);
+    border-left: 15px solid rgba(79, 70, 63, 1);
+}
+
+.titlespyp{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    margin-bottom: 50px;
+    background-color: white;
+}
+
+.titlespyp .hand{
+    margin-top: 20px;
+    justify-self: end;
+    align-self: center;
+    width: 50px;
+    height: 70px;
+    grid-column: 3/4;
+    
+}
+
+.titlesshadow{
+    grid-column: 4/12;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.titlesshadow .prin{
+    margin-left: 5px;
+    font-size: 59px;
+    color: var(--titlecolor);
+    grid-column: 1/13;
+    margin-bottom: 0px;
+}
+
+.titlesshadow .prin a{
+    font-size: 67px;
+}
+
+.titlesshadow .shadou{
+    height: 70px;
+    width: 90%;
+    grid-column: 1/7;
+    margin-top: -40px;
+    border-radius: 1px solid black;
+    
+}
+
+.pyptitles .iconcontent{
+    margin-bottom: 90px;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+
+.icondiv .contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icondiv .contenedor figure{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+.icondiv .contenedor figure img{
+    align-self: end;
+    justify-self: center;
+    width: 70%;
+    height: 70%;
+    transition: all .5s ease;
+}
+
+.icondiv .contenedor figure .resp{
+    align-self: end;
+    justify-self: center;
+    
+    height: 55%;
+    width: 85%;
+    transition: all .5s ease;
+}
+
+.icondiv .contenedor figure .capita{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+    visibility: hidden;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.icondiv .contenedor figure .capita img{
+    margin-top: 15px;
+    margin-left: 40px;
+    width: 70%;
+    height: 85%;
+}
+
+.icondiv .contenedor figure .capita .res{
+    height: 85%;
+    width: 85%;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+.icondiv .contenedor figure:hover > .capita{
+    background-color: white;
+    opacity: 1;
+    visibility: visible;
+}
+
+.pypimages{
+    grid-column: 2/12;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+    
+}
+
+.pypimages .hacemos{
+    grid-column: 1/10;
+    background-color: rgba(129, 80, 47, 0.8);
+    box-shadow: 0px 15px 10px -2px rgba(0,0,0,0.45);
+}
+
+.imageone{
+    height: 500px;
+    background-image: url("./assets/img/quehacemos3.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: slideuno 10s infinite;
+}
+
+@keyframes slideuno{
+    33%{
+        background: url('./assets/img/quehacemos2.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    66%{
+        background: url('./assets/img/quehacemos3.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.pypimages .hacemos .textone{
+    height: 550px;
+    color: white;
+}
+
+.pypimages .hacemos .textone h1{
+    text-transform: uppercase;
+    font-family: 'candara bold';
+    padding-top: 63px;
+    width: 80%;
+    margin: auto;
+    font-size: var(--title);
+    color: rgba(237, 95, 0, 0.8);
+    margin-bottom: 0px;
+}
+
+.pypimages .hacemos .textone p{
+    padding-top: 80px;
+    padding-bottom: 10px;
+    margin: auto;
+    width: 80%;
+    font-size: var(--text);
+    text-align: justify;
+    
+}
+
+.pypimages .compromiso{
+    grid-column: 12/21;
+    background-color: rgba(237, 95, 0, 0.9);
+    box-shadow: 0px 15px 10px -2px rgba(0,0,0,0.45);
+}
+
+
+.imagetwo{
+    height: 500px;
+    background-image: url("./assets/img/nuestrocompromiso.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: slidedos 10s infinite;
+}
+
+@keyframes slidedos{
+    33%{
+        background: url('./assets/img/nuestrocompromiso2.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    66%{
+        background: url('./assets/img/nuestrocompromiso3.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+
+
+.pypimages .compromiso .texttwo{
+    color: white;
+}
+
+.pypimages .compromiso .texttwo h1{
+    text-transform: uppercase;
+    font-family: 'candara bold';
+    width: 50%;
+    margin: auto;
+    color: rgba(79, 70, 63, 1);
+    font-size: var(--title);
+}
+
+.pypimages .compromiso .texttwo .uno{
+    padding-left: 40px;
+    width: 80%;
+    margin: auto;
+    padding-top: 43px;
+}
+
+.pypimages .compromiso .texttwo p{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin: auto;
+    width: 80%;
+    font-size: var(--text);
+    text-align: justify;
+}
+
+/* .pyp{
+    margin: auto;
+    max-width: 1400px;
+    margin-top: 100px;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.pyptitles{
+    
+    grid-column: 2/6;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    
+    gap: 0;
+}
+
+.pyptitles .titles{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+}
+
+.pyptitles .prin{
+    margin-bottom: 0px;
+    grid-column: 2/5;
+    grid-row: 2/3;
+}
+
+.pyptitles .end{
+    margin-top: 0px;
+    height: 50px;
+    border-left: 10px solid orangered;
+    grid-column: 2/4;
+    grid-row: 3/4;
+    text-align: end;
+}
+
+.pyptitles ul{
+    margin: 0;
+    padding: 0;
+    font-family: 'candara';
+    grid-column: 2/5;
+    margin-right: 50px;
+    display: grid;
+    justify-self: center;
+    align-self: start;
+    margin-top: 0px;
+    font-size: 30px;
+    list-style: none;
+    text-align: center;
+}
+
+.pyptitles ul li{
+    color: rgba(0, 0, 0, 0.637);
+    margin-top: 15px;
+    transition: all .5s ease;
+}
+
+.pyptitles ul li:hover{
+    
+    cursor: default;
+    margin-left: 50px;
+    color: orangered;
+}
+
+.pypimages{
+    margin-top: 80px;
+    grid-column: 6/12;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.pypimages .imageone{
+    grid-column: 1/7;
+    height: 295px;
+    background-image: url("./assets/img/quehacemos.jpg");
+    background-size: cover;
+    background-position: center;
+    animation: slideuno 10s infinite;
+}
+
+@keyframes slideuno{
+    33%{
+        background: url('./assets/img/quehacemos2.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    66%{
+        background: url('./assets/img/quehacemos3.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.pypimages .textone{
+    padding: 15px;
+    grid-column: 7/13;
+    height: 265px;
+    background-color: rgb(129, 80, 47);
+    box-shadow: -5px 4px 5px 0px rgba(0,0,0,0.45);
+    overflow: hidden;
+}
+
+.pypimages .textone h1{
+    font-size: 27px;
+    margin: 0;
+    font-family: 'candara';
+    color: rgb(237, 96, 0);
+}
+
+.pypimages .texttwo{
+    padding: 15px;
+    margin-top: 15px;
+    grid-column: 1/7;
+    height: 265px;
+    background-color: rgb(237, 96, 0);
+    box-shadow: 3px 6px 6px -1px rgba(0,0,0,0.45);
+    position: relative;
+    overflow: hidden;
+}
+
+.pypimages .texttwo h1{
+    font-size: 27px;
+    margin: 0;
+    font-family: 'candara';
+    color: rgb(129, 80, 47);
+}
+
+.pypimages .textone p,
+.pypimages .texttwo p{
+    font-family:'candara';
+    color: white;
+    font-weight: lighter;
+    font-size: 20px;
+    text-align: start;
+}
+
+.pypimages .texttwo h1{
+    margin: 0;
+}
+
+.pypimages .imagetwo{
+    background-image: url("./assets/img/nuestrocompromiso.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-top: 15px;
+    grid-column: 7/13;
+    height: 295px;
+    animation: slidedos 10s infinite;
+}
+
+@keyframes slidedos{
+    33%{
+        background: url('./assets/img/nuestrocompromiso2.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    66%{
+        background: url('./assets/img/nuestrocompromiso3.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+}
+
+.img-content{
+    
+    position: absolute;
+    margin-top: 380px;
+    margin-left: 210px;
+    
+}
+
+.img-content img{
+    height: 160px;
+    width: 100px;
+}
+ */
+/* TEAM */
+
+.team{
+    /* background-image: url("./assets/img/sombra.png");
+    background-size: cover;
+    background-position: center; */
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.titles{
+    margin: 0;
+    background-color: rgb(238, 232, 228);
+    grid-column: 1/13;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.titles img{
+    margin-right: 20px;
+    display: grid;
+    justify-self: end;
+    align-self: center;
+    width: 80px;
+    grid-column: 3/4;
+}
+
+.titles h1{
+    grid-column: 4/12;
+    margin: 0;
+    font-size: var(--title);
+    color: rgb(234, 98, 14);
+    font-family: 'candara';
+    font-weight: 300;
+}
+
+
+.titles .sub{
+    margin-top: -30px;
+    grid-column: 4/7;
+    width: 100%;
+    height: 60px;
+}
+
+.titles .title-content{
+    margin-top: 0;
+    border-left: 10px solid rgb(234, 98, 14);
+    grid-column: 4/11;
+    margin-bottom: 10px;
+    padding-bottom: 0px;
+}
+
+.titles .title-content h1{
+    color: rgb(234, 98, 14);
+    font-size: var(--title);
+    padding-left: 30px;
+    font-family: 'candara';
+    font-weight: 300;
+    margin: 0;
+}
+
+.titles .title-content p{
+    width: 100%;
+    margin: 0;
+    text-align: start;
+    font-family: 'candara';
+    font-weight: 50;
+    visibility: visible;
+    font-size: var(--text);
+    padding: 0;
+    padding-left: 10px;
+    color: var(--textcolor);
+}
+
+
+.titles .shadowup{
+    margin: 0;
+    top: 0;
+    /* height: 150px; */
+    width: 100%;
+    grid-column: 1/13;
+    margin-bottom: 40px;
+    margin-top: 0px;
+}
+
+.titles .shadow{
+    margin: 0;
+    bottom: 0;
+    transform: rotate(-180deg);
+    margin-top: 40px;
+    /* height: 150px; */
+    width: 100%;
+    grid-column: 1/13;
+}
+
+.teamicon{
+    margin-top: 120px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    grid-column: 1/13;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+
+
+.teamicon div img{
+    
+    width: 120px;
+    margin: auto;
+}
+
+.teamicon div h5{
+    margin-top: 10px;
+    text-align: center;
+    color: rgba(79, 70, 63, 1);
+    font-size: var(--text);
+}
+
+
+
+/* .teamavatar{
+    
+    width: 80%;
+    margin:auto;
+    height: 450px;
+    grid-column: 1/13;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 1.5em; 
+    align-items: center;
+    justify-items: stretch;
+}
+
+.teamavatar .avatardiv{
+    background-color: white;
+    height: 350px;
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(2,1fr);
+    transition: all .5s ease;
+}
+
+.teamavatar .avatardiv:hover{
+    cursor: pointer;
+    height: 392px;
+    
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.452);
+}
+
+.teamavatar .avatardiv:hover .avatar-content .divrectangle{
+    background-color: rgb(234, 98, 14);
+    height: 100%;
+}
+
+.teamavatar .avatardiv:hover .avatar-content h1{
+    color: rgb(234, 98, 14);
+}
+
+.teamavatar .avatardiv:hover .divempleado p{
+    visibility: visible;
+    
+    color: rgb(234, 98, 14);
+}
+
+
+
+.teamavatar .avatardiv .img{
+    box-shadow: 0 0 20px black;
+    background-color: rgb(234, 98, 14);
+    grid-column: 1/3;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRDAicU8-6odbXH1tYT14JAWjqkwujyYskV5A&usqp=CAU");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.452);
+    width: 100%;
+    height: 150px;
+    margin-bottom: 0;
+}
+
+.avatardiv .avatar-content{
+    margin-top: 10px;
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.avatar-content .divrectangle{
+    height: 25%;
+    background-color: rgb(79, 70, 63);
+    grid-column: 1/2;
+    transition: all .5s ease;
+}
+
+.avatar-content .divrectangle .rectangle{
+    
+    background-color: rgb(79, 70, 63);
+    transition: all .5s ease;
+}
+
+.avatar-content .divempleado{
+    grid-column: 3/13;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+
+}
+
+.avatar-content h1{
+    grid-column: 1/4;
+    color: rgb(79, 70, 63);
+    margin: 0;
+}
+
+.divempleado p{
+    grid-column: 1/10;
+    width: 100%;
+    visibility: hidden;
+    color: rgb(234, 98, 14);
+    
+}
+ */
+/* SERVICES */
+
+.services{
+    /* max-width: 1400px;
+    margin: auto; */
+    margin-top: 10px;
+    color: black;
+}
+
+
+.services .titles{
+    padding-top: 40px;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 1em;
+    margin-bottom: 50px;
+}
+
+.services .titles .line{
+    margin-top: 15px;
+    grid-column: 1/4;
+    height: 10px;
+    background-color: rgb(234, 98, 14);
+}
+
+.services .titles h1{
+    font-family: 'candara';
+    font-weight: 400;
+    color: var(--titlecolor);
+    margin-top: 0;
+    grid-column: 4/12;
+    font-size: var(--title);
+}
+
+.services .titles .shadou{
+    margin-top: -60px;
+    grid-column: 4/7;
+    width: 100%;
+    height: 60px;
+}
+
+
+.services .titles p{
+    font-family: 'candara';
+    font-weight: 50;
+    margin-top: 0;
+    font-size: var(--text);
+    grid-column: 4/11;
+    color: var(--textcolor);
+    visibility: visible;
+    text-align: justify;
+}
+
+.services-content{
+    margin: auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    
+}
+
+.services-content div div div{
+    border: 1px solid rgb(156, 121, 98);
+    height: 200px;
+    display: grid;
+    transition: all .5s ease;
+}
+
+.services-content div:hover{
+    background-color: rgb(156, 121, 98);
+    box-shadow: 0px 12px 4px -5px rgba(0,0,0,0.10);
+}
+
+
+.contenedor{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor figure{
+    margin: 0;
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor figure img{
+    width: 30%;
+    /* transition: all .1s ease; */
+}
+
+.contenedor figure .capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(156, 121, 98);
+    transition: all .5s ease;
+    opacity: 0;
+    visibility: hidden;
+    
+    color: white;
+}
+
+.contenedor figure .capa p{
+    font-family: 'candara';
+    margin: auto;
+    font-size: 22px;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 30px;
+}
+
+
+.contenedor figure .capa img{
+    margin-top: 15px;
+    margin-left: 90px;
+    width: 30%;
+}
+
+.contenedor figure:hover .capa{
+    cursor: pointer;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* PROJECTS */
+
+.projects{
+    /* margin: auto;
+    max-width: 1400px; */
+    margin-top: 150px;
+    display: grid;
+    grid-template-columns: repeat(20,1fr);
+}
+
+.barone{
+    
+    grid-column: 1/1;
+}
+
+.barone .one{
+    color: transparent;
+    width: 60%;
+    height: 35%;
+    background-color: rgb(234, 98, 14);
+}
+
+.barone .two{
+    color: transparent;
+    background-color: rgb(156, 121, 98);
+    width: 60%;
+    height: 35%;
+}
+
+.bartwo{
+    grid-column: 3/19;
+}
+
+.bartwo .projectstitles{
+    height: 180px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr)
+}
+
+.bartwo .projectstitles .titles{
+    background-color: white;
+    bottom: 0px;
+    height: 70%;
+    grid-column: 3/11;
+    
+}
+
+.bartwo .projectstitles .titles h1{
+    margin-left: 10px;
+    grid-column: 1/12;
+    
+    font-family: 'candara';
+    font-weight: 400;
+    color: var(--titlecolor);
+    font-size: var(--title);
+    margin-bottom: 0px;
+}
+
+.bartwo .projectstitles .titles .shadou{
+    width: 100%;
+    grid-column: 1/5;
+    height: 60px;
+    margin-top: -40px;
+}
+
+.bartwo .projectstitles .titles p{
+    font-family: 'candara';
+    font-weight: 50;
+    font-size: var(--text);    
+    color: var(--textcolor);
+    margin-left: 10px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    grid-column: 1/12;
+    visibility: visible;
+    border-left: 8px solid orangered;
+    padding-left: 10px;
+}
+
+iframe{
+    width: 100%;
+    height: 976px;
+    border: none;
+    box-shadow: 0px 8px 4px -5px rgba(0,0,0,0.45);
+}
+
+.barthree{
+    
+    grid-column: 20/21;
+}
+
+.barthree .one{
+    color: transparent;
+    float: right;
+    width: 60%;
+    height: 35%;
+    background-color: rgb(156, 121, 98);
+}
+
+.barthree .two{
+    color: transparent;
+    float: right;
+    width: 60%;
+    height: 35%;
+    background-color: rgb(234, 98, 14);
+}
+
+/* BROCHURE */
+
+.brochure{
+    /* margin: auto;
+    max-width: 1400px */
+    margin-top: 10px;
+}
+
+.brochure .bro{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.brochure .titles{
+    background-color: white;
+    margin-top: -90px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+.brochure .titles img{
+    width: 100px;
+    justify-self: center;
+    align-self: center;
+    grid-column: 4/5;
+}
+
+.brochure .titles h1{
+    font-size: var(--title);
+    font-family: 'candara';
+    grid-column: 5/12;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: var(--titlecolor);
+}
+
+.brochure .titles .shadou{
+    grid-column: 5/9;
+    height: 60px;
+    width: 100%;
+    margin-top: -40px;
+}
+
+.brochure .titles .p{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    margin-top: 0px;
+    padding-left: 10px;
+    border-left: 16px solid var(--titlecolor);
+    grid-column: 5/10;
+}
+
+.brochure .titles .p h1{
+    font-size: var(--title);
+    color: var(--titlecolor);
+    font-family: 'candara';
+    text-align: center;
+    grid-column: 1/4;
+    margin: 0;
+}
+
+.brochure .titles .p p{
+    grid-column: 1/6;
+    margin: 0;
+    visibility: visible;
+    font-family: 'candara';
+    font-weight: 50;
+    font-size: var(--text);
+    color: var(--textcolor);
+    
+}
+
+.brochure .titles button{
+    height: 70px;
+    width: 170px;
+    font-family: 'candara';
+    font-size: 27px;
+    color: rgba(79, 70, 63, 0.848);
+    background-color: white;
+    border: none;
+    border-left: 3px solid orangered;
+    margin-top: 50px;
+    grid-column: 10/11;
+    box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.35);
+    transition: all .5s ease;
+}
+
+.brochure .titles button:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.15);
+}
+
+.brochure .titles button a{
+    color: rgba(79, 70, 63, 0.848);
+    text-decoration: none;
+}
+
+/* CONTACT */
+
+.contact{
+    height: 900px;
+    /* margin: auto;
+    max-width: 1400px; */
+    margin-top: 100px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    background-color: rgb(238, 232, 228);
+}
+
+.contact-franja{
+    margin-top: 20px;
+    grid-column: 1/1;
+    
+}
+
+.contact-franja div{
+    width: 35%;
+}
+
+.contact-franja .one{
+    height: 50%;
+    background-color: rgb(234, 98, 14);
+}
+.contact-franja .two{
+    height: 50%;
+    background-color: rgb(156, 121, 98);
+}
+
+.contact-content{
+    grid-column: 2/13;
+    
+    
+}
+
+.contact-titles{
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    margin-bottom: 90px;
+}
+
+.contact-titles img{
+    margin-right: 10px;
+    
+    align-self: start;
+    justify-self: end;
+    width: 50px;
+    grid-column: 3/4;
+    
+}
+
+.contact-titles h1{
+    
+    font-family: 'candara';
+    font-weight: 400;
+    padding-left: 8px;
+    font-size: var(--title);
+    color: rgb(234, 98, 14);
+    grid-column: 4/10;
+    margin: 0;
+}
+
+.contact-titles .shadou{
+    height: 60px;
+    width: 100%;
+    grid-column: 4/6;
+    margin-top: -40px;
+}
+
+.contact-titles p{
+    padding-left: 10px;
+    font-size: var(--text);
+    color: var(--textcolor);
+    grid-column: 4/10;
+    border-left: 13px solid var(--titlecolor);
+    margin: 0;
+}
+
+.contact form{
+    
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    
+}
+
+form .nomessage{
+    
+    grid-column: 1/7;
+    display: flex;
+    flex-direction: column;
+}
+
+.nomessage label{
+    font-size: var(--text);
+    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.nomessage input{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 14px 15px -8px rgba(0,0,0,0.473);
+    margin-bottom: 25px;
+    height: 70px;
+    width: 70%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+form .message{
+    display: flex;
+    flex-direction: column;
+    grid-column: 7/13;
+}
+
+.message label{
+    font-size: var(--text);
+    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.message textarea{
+    height: 350px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 14px 15px -8px rgba(0,0,0,0.473);
+    resize: none;
+    width: 80%;
+}
+
+.message input[type=submit]{
+    box-shadow: 5px 14px 15px -8px rgba(0,0,0,0.473);
+    border: none;
+    border-left: 4px solid rgb(234, 98, 14);
+    background-color: white;
+    color: rgb(234, 98, 14);
+    margin-top: 15px;
+    font-size: var(--text);
+    height: 45px;
+    width: 18%;
+}
+
+.img-contact{
+    margin-top: 200px;
+    right: 0px;
+    opacity: 0.07;
+    position: absolute;
+}
+
+/* BRANCH */
+.branch{
+    /* margin: auto;
+    max-width: 1400px; */
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.branch .branchtitles{
+    margin: auto;   
+}
+
+.branch .branchtitles h1{
+    text-align: center;
+    font-size: var(--title);
+    font-family: 'candara';
+    font-weight: 400;
+    margin: auto;
+    margin: auto;
+    color: var(--titlecolor);
+}
+
+.branch .branchtitles .shadowdiv{
+    width: 44%;
+    margin: auto;
+    
+}
+
+.branch .branchtitles .shadou{
+    
+    width: 100%;
+    height: 50px;
+    margin-top: -25px;
+}
+
+.branchimgs{
+    margin: auto;
+    width: 90%;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2em;
+}
+
+.branchimgs div{
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    transition: all .5s ease;
+}
+
+.branchimgs div img{
+    padding-top: 20px;
+    height: 50%;
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.branchimgs div .barrick,
+.branchimgs div .multi,
+.branchimgs div .ams,
+.branchimgs div .sacyr,
+.branchimgs div .cis{
+    height: 70%;
+}
+
+.branchimgs div:hover{
+    box-shadow: 0px 4px 3px -2px rgba(0,0,0,0.45);
+}
+
+
+/* TEST */
+
+.hovertest{
+    width: 80%;
+    margin: auto;
+}
+
+.hovertest .contenedor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.hovertest .contenedor figure{
+    position: relative;
+    height: 250px;
+    width: 350px;
+    overflow: hidden;
+}
+
+.hovertest .contenedor figure img{
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+}
+
+.hovertest .contenedor figure .capita{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .5s ease;
+    visibility: hidden;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.hovertest .contenedor figure .capita img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.hovertest .contenedor figure:hover > .capita{
+    background-color: white;
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* FOOTER */
+footer{
+    margin: 0;
+    padding: 0;
+    font-family: 'candara';
+    background-color: rgb(238, 232, 228);
+    color: rgb(156, 121, 98);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    font-size: 16px;
+}
+
+footer img{
+    
+    margin-top:-35px;
+    grid-column: 1/4;
+    max-width: 100%;
+}
+
+footer .up{
+    margin-left: 50%;
+    width: 50px;
+    grid-column: 3/4;
+    margin-top: 0px;
+    opacity: 1;
+}
+
+footer .up:hover{
+    cursor: pointer;
+}
+
+footer .left{
+    padding: 0;
+    
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 1em;
+}
+
+footer .left .logo{
+    margin-top: -30px;
+    grid-column: 3/6;
+    width: 200px;
+}
+
+footer .left .logo img{
+    opacity: .8;
+    width: 100%;
+}
+
+footer .left .cs{
+    grid-column: 3/7;
+}
+
+footer .left .cs .cstitles{
+    
+    margin-top: 70px;
+}
+
+footer .left .cs .cstitles h3{
+    font-size: 25px;
+}
+
+footer .left .cs .cstitles p{
+    font-size: 20px;
+}
+
+footer .left .mapone{
+    border-left: 10px solid rgb(156, 121, 98);
+    grid-column: 8/12;
+    height: 250px;
+}
+
+footer .left .mapone iframe{
+    
+    height: 100%;
+    width: 100%;
+    box-shadow: 6px 7px 10px -2px rgba(0,0,0,0.45);
+}
+
+footer .left .lin{
+    height: 5px;
+    background-color: rgb(156, 121, 98);
+    grid-column: 1/7;
+}
+
+footer .left .s{
+    grid-column: 3/7;
+}
+
+footer .left .s .stitles{
+    
+    margin-top: 60px;
+}
+
+footer .left .s .stitles h3{
+    font-size: 25px;
+}
+
+footer .left .s .stitles p{
+    font-size: 20px;
+}
+
+footer .left .maptwo{
+    border-left: 10px solid rgb(156, 121, 98);
+    grid-column: 8/12;
+    height: 250px;
+    margin-bottom: 50px;
+}
+
+footer .left .maptwo iframe{
+    height: 100%;
+    width: 100%;
+    box-shadow: 6px 7px 10px -2px rgba(0,0,0,0.45);
+}
+
+
+footer .right{
+    
+    grid-column: 3/4;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+footer .right .finfoter{
+    
+    grid-column: 2;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+}
+
+footer .right img{
+    width: 70%;
+    margin-top: 0px;
+    opacity: 0.9;
+    align-self: center;
+    justify-self: center;
+}
+
+footer .final{
+    margin-top: 20px;
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+}
+
+footer h4{
+    font-size: 20px;
+    grid-column: 2/4;
+    align-self: center;
+}
+
+footer i{
+    justify-self: end;
+    align-self: center;
+    grid-column:5/6;
+    margin-right: 20px;
+    font-size: 30px;
+    color: rgb(234, 98, 14);
+}
+
+footer h5{
+    font-size: 20px;
+    grid-column: 6/9;
+    align-self: center;
+    
+}
+
+footer h6{
+    font-size: 20px;
+    grid-column: 9/12;
+    border-right: 2px solid rgb(156, 121, 98);
+    justify-self: end;
+}
+
+
+
+
+/* RESPONSIVE */
+
+.ham-burger .fa{
+    
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+/* PYP */
+@media(max-width:1300px){
+
+    .uptitles img{
+        height: 100px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .uptitles p{
+        padding-left: 5px;
+        grid-column: 3/12;
+        font-size: 25px;
+    }
+
+    .uptitles a{
+        font-size: 32px;
+    }
+
+    .titles{
+        margin-bottom: 50px;
+    }
+
+    .titlesshadow .shadow{
+        margin-top: 0px;
+    }
+
+    .icondiv .contenedor figure .capita img{
+        margin-top: 8px;
+        margin-left: 15px;
+    }
+
+    .imageone,
+    .imagetwo{
+        height: 300px;
+    }
+
+    .pypimages .hacemos .textone{
+        height: 250px;
+    }
+
+    .pypimages .hacemos .textone h1,
+    .pypimages .compromiso .texttwo h1,
+    .pypimages .compromiso .texttwo .uno{
+        font-size: 40px;
+    }
+
+    .pypimages .hacemos .textone p,
+    .pypimages .compromiso .texttwo p{
+        font-size: 26px;
+    }
+
+    .pypimages .hacemos .textone p{
+        padding-top: 40px;
+    }
+
+}
+
+/* PYP */
+@media(max-width: 1000px){
+
+    .titlespyp .hand{
+        margin-top: 20px;
+        justify-self: end;
+        align-self: center;
+        width: 50px;
+        height: 70px;
+        grid-column: 2/3;
+        
+    }
+    
+    .titlesshadow{
+        grid-column: 3/12;
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+    }
+    
+    .titlesshadow .prin{
+        margin-left: 5px;
+        font-size: 59px;
+        color: rgb(234, 98, 14);
+        grid-column: 1/13;
+        margin-bottom: 0px;
+    }
+
+    .pypimages .hacemos .textone h1,
+    .pypimages .compromiso .texttwo h1,
+    .pypimages .compromiso .texttwo .uno{
+        font-size: 35px;
+    }
+
+    .pypimages .hacemos .textone p,
+    .pypimages .compromiso .texttwo p{
+        font-size: 22px;
+    }
+
+    .pypimages .hacemos .textone p{
+        width: 90%;
+        padding-top: 30px;
+    }
+
+    .pypimages .compromiso .texttwo p{
+        width: 90%;
+        padding-top: 10px;
+    }
+
+    .pypimages .hacemos .textone h1{
+        
+        padding-top: 25px;
+    }
+
+    .pypimages .compromiso .texttwo h1{
+        width: 80%;
+    }
+
+    .pypimages .compromiso .texttwo .uno{
+        width: 70%;
+        padding-top: 20px;
+    }
+    
+
+    .teamicon{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .brochure .titles h1{
+        font-size: 50px;
+        font-family: 'candara';
+        grid-column: 4/12;
+    }
+
+    .brochure .titles .p{
+        grid-column: 4/12;
+        margin-top: 40px;
+    }
+
+    .brochure .titles img{
+        display: none;
+    }
+
+    .titlesshadow .shadou,
+    .titles .sub,
+    .services .titles .shadou,
+    .bartwo .projectstitles .titles .shadou,
+    .brochure .titles .shadou,
+    .contact-titles .shadou,
+    .branch .branchtitles .shadowdiv
+    {
+        display: none;
+    }
+}
+
+/* PYP */
+@media(max-width:780px){
+    .pyptitles .iconcontent{
+        grid-template-columns: repeat(3,1fr);
+    }
+
+    .pypimages .hacemos .textone h1,
+    .pypimages .compromiso .texttwo h1,
+    .pypimages .compromiso .texttwo .uno{
+        font-size: 28px;
+    }
+
+    .pypimages .hacemos .textone p,
+    .pypimages .compromiso .texttwo p{
+        font-size: 18px;
+    }
+
+    .pypimages .hacemos .textone p{
+        padding-top: 15px;
+    }
+
+    .pypimages .compromiso .texttwo p{
+        padding-top: 10px;
+    }
+
+    .pypimages .hacemos .textone h1{
+        padding-top: 20px;
+    }
+
+    .pypimages .compromiso .texttwo .uno{
+        padding-top: 20px;
+    }
+    
+}
+
+/* PYP */
+@media(max-width:550px){
+    .pyptitles .iconcontent{
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .pypimages .hacemos{
+        grid-column: 2/20;
+        margin-bottom: 40px;
+    }
+
+    .pypimages .compromiso{
+        grid-column: 2/20;
+    }
+
+    .pypimages .hacemos .textone{
+        height: 270px;
+    }
+
+    .pypimages .hacemos .textone h1,
+    .pypimages .compromiso .texttwo h1,
+    .pypimages .compromiso .texttwo .uno{
+        font-size: 30px;
+    }
+
+    .pypimages .hacemos .textone p,
+    .pypimages .compromiso .texttwo p{
+        font-size: 23px;
+    }
+
+    .imageone,
+    .imagetwo{
+        height: 200px;
+    }
+
+    .pypimages .hacemos .textone p{
+        padding-top: 10px;
+    }
+
+    .pypimages .compromiso .texttwo p{
+        padding-top: 10px;
+    }
+
+    .pypimages .hacemos .textone h1{
+        margin: auto;
+        width: 90%;
+        padding-top: 20px;
+    }
+
+    .pypimages .compromiso .texttwo .uno{
+        padding-top: 20px;
+    }
+    
+}
+
+@media (max-width:980px){
+
+    .contenedor figure .capa img{
+        margin-top: 20px;
+        margin-left: 60px;
+        width: 30%;
+    }
+
+    .bartwo .projectstitles{
+        height: 180px;
+    }
+
+}
+
+@media (max-width:850px){
+    .ham-burger .fa{
+        display: inline-block;
+    }
+
+    header .brand-name a img{
+        margin-left: 0px;
+        width: 120px;
+        position: relative;
+    }
+
+    .navbar{
+        text-align: center;
+        position: absolute;
+        background-color: white;
+        width: 100%;
+        left: 0px;
+        top:70px;
+        transition: all .5s ease;
+        display:none;
+    }
+
+    .navbar.show{
+        display: block;
+    }
+
+    header .navbar ul{
+        margin-top: 20px;
+    }
+
+    header .navbar ul li {
+        text-align: center;
+        display:block;
+        margin-left: 5%;
+    }
+
+    header .navbar ul li img{
+        display: block;
+    }
+
+    header .navbar ul li a{
+        line-height: 42px;
+    }
+
+    header .navbar ul li a::before{
+        background-color: #60da27;
+    }
+
+    .contenedor figure .capa img{
+        margin-top: 20px;
+        margin-left: 50px;
+        width: 30%;
+    }
+
+    header.fixed {
+        background-color: white;
+        position: fixed;
+        box-shadow:none;
+        animation: fixHeader .3s ease;
+    }
+
+    .bartwo .projectstitles .titles{
+        grid-column: 1/12;
+    }
+
+    .bartwo .projectstitles .titles p{
+        margin-top: 30px;
+        margin-bottom: 70px;
+        text-align: justify;
+    }
+
+    .img-contact{
+        display: none;
+        right: 0px;
+        opacity: 0.07;
+        position: absolute;
+    }
+
+    iframe{
+        margin-top: 50px;
+        width: 100%;
+        border: none;
+        box-shadow: 0px 8px 4px -5px rgba(0,0,0,0.45);
+    }
+}
+
+@media (max-width:830px){
+
+    .img-content img{
+        margin-top: 50px;
+        margin-left: -90px;
+        height: 100px;
+        width: 60px;
+    }
+
+    .bartwo .projectstitles{
+        height: 290px;
+    }
+
+    .branch .branchtitles h1{
+        font-size: 34px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        grid-column: 2/7;
+        margin: 0;
+        color: orangered;
+    }
+
+    .img-content img{
+        margin-top: 50px;
+        margin-left: -140px;
+        height: 100px;
+        width: 60px;
+    }
+
+    
+}
+
+@media (max-width:570px){
+
+    .home .hometitles{
+        margin-left: 0px;
+        padding: 0;
+        align-self: end;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        grid-column: 2/12;
+    }
+    
+    .home .hometitles h2{
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        font-size: 58px;
+        font-weight: 300;
+        
+    }
+    
+    .home .hometitles h4{
+        
+        font-family: 'Lora', serif;
+        margin-top: 0px;
+        font-size: 22px;
+        margin-bottom: 10px;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+    
+    .home .hometitles .title{
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 3px;
+        font-weight: 500;
+        font-size: 65px;
+        color: orangered;
+        
+    }
+    
+    .home .hometitles p{
+        padding-left: 10px;
+        width: 90%;
+        font-size: 15px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+        border-left: 8px solid orangered;
+        font-family: 'Noto Sans KR', sans-serif;
+        font-weight: 50;
+    }
+
+    .titles img{
+        
+        margin-right: 20px;
+        display: grid;
+        justify-self: center;
+        align-self: start;
+        width: 50px;
+        grid-column: 3/4;
+    }
+
+    .teamavatar{
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .avatardiv{
+        min-width: 190px;
+    }
+
+    .services-content{
+        display: flex;
+        overflow-x: auto;
+    }
+
+    .contenedor figure .capa img{
+        margin-top: 20px;
+        margin-left: 70px;
+        width: 30%;
+    }
+
+    .icon{
+        min-width: 190px;
+    }
+
+    .bartwo .projectstitles{
+        height: 300px;
+    }
+
+    iframe{
+        height: 750px;
+    }
+
+
+    .contact-titles{
+        width: 80%;
+        margin-top: 60px;
+        grid-template-columns: repeat(1,1fr);
+        margin-bottom: 40px;
+    }
+
+    .contact-titles h1{
+        margin: auto;
+    }
+
+    .contact-titles p{
+        text-align: center;
+        border-left: none;
+    }
+
+    .contact-titles .hand{
+        display: none;
+    }
+
+
+    .contact form{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    form .nomessage{
+        justify-self: center;
+        align-self: center;
+        grid-column: 1/2;
+    }
+
+    form .nomessage label{
+        font-size: 25px;
+    }
+
+    form .nomessage input{
+        width: 90%;
+        height: 40px;
+    }
+
+    form .message{
+        grid-column: 1/2;
+    }
+
+    form .message label{
+        text-align: start;
+        font-size: 25px;
+        
+    }
+
+    form .message textarea{
+        height: 100px;
+        width: 90%;
+        justify-self: start;
+        align-self: start;
+        margin-bottom: 30px;
+    }
+
+    form .message input[type=submit]{
+        font-size: 20px;
+        margin: auto;
+        width: ;       
+    }
+
+    .branch .branchtitles h1{
+        font-size: 34px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        grid-column: 2/11;
+        margin: 0;
+        color: orangered;
+    }
+
+    .branchimgs{
+        margin: auto;
+        width: 90%;
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 2em;
+    }
+
+    footer{
+        padding-top: 30px;
+    }
+
+    footer .left{
+        grid-column: 1/4;
+    }
+
+    footer .left .logo{
+        margin-top: 40px;
+        grid-column: 5/9;
+        width: 200px;
+    }
+    
+    footer .left .logo img{
+        opacity: .8;
+        width: 100%;
+    }
+    
+    footer .left .cs{
+        grid-column: 2/6;
+    }
+    
+    footer .left .cs .cstitles{
+        
+        margin-top: 30px;
+    }
+    
+    footer .left .mapone{
+        border-left: none;
+        grid-column: 7/11;
+        height: 180px;
+    }
+    
+    footer .left .mapone iframe{
+        height: 100%;
+        width: 100%;
+        box-shadow: 6px 7px 10px -2px rgba(0,0,0,0.45);
+    }
+    
+    footer .left .lin{
+        margin-top: 50px;
+        height: 5px;
+        background-color: rgba(165, 42, 42, 0.611);
+        grid-column: 1/7;
+    }
+    
+    footer .left .s{
+        grid-column: 2/6;
+    }
+    
+    footer .left .s .stitles{
+        margin-top: 60px;
+    }
+    
+    footer .left .maptwo{
+        border-left: none;
+        grid-column: 7/11;
+        height: 180px;
+        margin-bottom: 50px;
+    }
+    
+    footer .left .maptwo iframe{
+        height: 100%;
+        width: 100%;
+        box-shadow: 6px 7px 10px -2px rgba(0,0,0,0.45);
+    }
+    
+
+    footer .right{
+        display: none;
+    }
+
+    footer h4{
+        margin: 0;
+        grid-column: 4/12;
+    }
+    
+    footer i{
+        justify-self: start;
+        margin-right: 10px;
+        grid-column: 4/5;
+    }
+
+    footer h5{
+        margin: 0;
+        grid-column: 5/13;
+        margin-left: 0px;
+    }
+
+    footer h6{
+        grid-column: 2/12;
+    }
+
+}
+
+
+
+@media (max-width:480px){
+
+    .uptitles img{
+        grid-column: 1/2;
+        height: 100px;
+        align-self: center;
+        justify-self: center;
+    }
+    
+    .uptitles a{
+        font-size: 44px;
+        
+    }
+    
+    .uptitles p{
+        padding: 0;
+        padding-left: 5px;
+        grid-column: 2/13;
+        text-align: start;
+    }
+
+
+    .img-content img{
+        margin-top: 5px;
+        margin-left: -60px;
+        height: 100px;
+        width: 60px;
+    }
+
+    .titles .hand{
+        margin-right: 20px;
+        display: none;
+    }
+
+    .titles .title-content{
+        margin-top: 50px;
+        border-left: 10px solid rgb(234, 98, 14);
+        grid-column: 2/12;
+    }
+
+    .titles .title-content p{
+        text-align: start;
+    }
+
+    .pypimages .hacemos .textone p,
+    .pypimages .compromiso .texttwo p{
+        font-size: 20px;
+    }
+
+    .teamicon{
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .services .titles p{
+        grid-column: 2/12;
+    }
+
+    .bartwo .projectstitles{
+        height: 390px;
+    }
+
+
+    .brochure .titles img{
+        justify-self: center;
+        align-self: center;
+        grid-column: 3/4;
+    }
+    
+    .brochure .titles h1{
+        font-family: 'candara';
+        grid-column: 2/10;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    
+    .brochure .titles .p{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        margin-top: 0px;
+        padding-left: 10px;
+        border-left: 8px solid orangered;
+        grid-column: 2/12;
+    }
+
+    .brochure .titles button{
+        grid-column: 5/13;
+    }
+
+    .img-contact{
+        display: none;
+    }
+
+    footer .left .cs{
+        grid-column: 5/7;
+    }
+
+    footer .left .mapone{
+        
+        grid-column: 5/10;
+        height: 250px;
+    }
+
+    footer .left .s{
+        grid-column: 5/7;
+    }
+
+    footer .left .maptwo{
+        
+        grid-column: 5/10;
+    }
+
+
+}
+
+@media (max-width:400px){
+    header .brand-name a img{
+        margin-left: 0px;
+    }
+
+    .img-content img{
+        margin-top: -50px;
+        margin-left: -140px;
+        height: 100px;
+        width: 60px;
+    }
+
+    .titlespyp .hand{
+        display: none;
+    }
+
+    .titlesshadow .prin{
+        font-size: 40px;
+    }
+
+    .titlesshadow .prin a{
+        font-size: 45px;
+    }
+
+
+    .services .titles h1{
+        font-size: 50px;
+    }
+
+    .titles img{
+        margin-right: 20px;
+        display: grid;
+        justify-self: end;
+        align-self: center;
+        width: 50px;
+        grid-column: 2/3;
+    }
+    
+    
+    .titles .title-content{
+        margin-top: 0;
+        border-left: 10px solid rgb(234, 98, 14);
+        grid-column: 1/13;
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+
+    .titles h1{
+        grid-column: 2/12;
+        margin-bottom: 30px;
+        font-size: 40px;
+        color: rgb(234, 98, 14);
+        font-family: 'candara';
+        font-weight: 300;
+    }
+
+    .titles .title-content p{
+        width: 90%;
+        font-size: 30px;
+        text-align: start;
+    }
+
+    .bartwo .projectstitles{
+        height: 520px;
+    }
+
+    .bartwo .projectstitles .titles h1{
+        font-size: 45px;
+    }
+
+    
+    form .nomessage input{
+        width: 80%;
+        height: 40px;
+    }
+
+    form .message textarea{
+        text-align: start;
+    }
+
+    form .message input[type=submit]{
+        margin-left: 35px;
+        width: 70px;       
+    }
+
+    form .message textarea{
+        align-self: start;
+        justify-self: start;
+        height: 100px;
+        width: 80%;
+    }
+
+    footer .left .logo{
+        margin-top: 40px;
+        grid-column: 3/9;
+        width: 200px;
+    }
+
+    footer .left .cs{
+        margin-bottom: 0px;
+        grid-column: 4/10;
+    }
+
+    footer .left .mapone{
+        margin-top: 0px;
+        grid-column: 4/10;
+    }
+
+    footer .left .s{
+        grid-column: 4/10;
+    }
+
+    footer .left .maptwo{
+        margin-top: 0px;
+        grid-column: 4/10;
+    }
+    
+}
+
+/* SHADOW */
+@media(max-width:1300px){
+    .titlesshadow .shadou{
+        width: 140%;
+    }
+}
